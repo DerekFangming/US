@@ -31,6 +31,7 @@
 		81AFA6791B0EDD12000763C0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332375315E438E900AE2736 /* libsqlite3.dylib */; };
 		81DDFD1919B4A60300BE649C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DDFD1719B4A60300BE649C /* Parse.framework */; };
 		81DDFD1A19B4A60300BE649C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DDFD1819B4A60300BE649C /* ParseFacebookUtils.framework */; };
+		91F1919F1B737A850037DA8A /* loginBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F1919E1B737A850037DA8A /* loginBg.png */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
 		C4C51B591613CE0800959FDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B561613CE0800959FDC /* Default@2x.png */; };
@@ -70,6 +71,7 @@
 		81A6CA601A2EA82800297C39 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81DDFD1719B4A60300BE649C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		81DDFD1819B4A60300BE649C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		91F1919E1B737A850037DA8A /* loginBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBg.png; sourceTree = "<group>"; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C4C51B541613CE0800959FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4C51B551613CE0800959FDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		09ABC07713A1D52D009C3FCF /* US */ = {
 			isa = PBXGroup;
 			children = (
+				91F1919E1B737A850037DA8A /* loginBg.png */,
 				09ABC08013A1D52D009C3FCF /* AppDelegate.h */,
 				09ABC08113A1D52D009C3FCF /* AppDelegate.m */,
 				09ABC08313A1D52D009C3FCF /* MainWindow.xib */,
@@ -146,8 +149,7 @@
 				09ABC08913A1D52E009C3FCF /* ViewController.xib */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 			);
-			name = US;
-			path = ParseStarterProject;
+			path = US;
 			sourceTree = "<group>";
 		};
 		09ABC07813A1D52D009C3FCF /* Supporting Files */ = {
@@ -239,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F1919F1B737A850037DA8A /* loginBg.png in Resources */,
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				09ABC08B13A1D52E009C3FCF /* ViewController.xib in Resources */,
@@ -347,8 +350,8 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ParseStarterProject/US-Prefix.pch";
-				INFOPLIST_FILE = ParseStarterProject/Info.plist;
+				GCC_PREFIX_HEADER = "US/US-Prefix.pch";
+				INFOPLIST_FILE = US/Info.plist;
 				PRODUCT_NAME = US;
 				WRAPPER_EXTENSION = app;
 			};
@@ -366,8 +369,8 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ParseStarterProject/US-Prefix.pch";
-				INFOPLIST_FILE = ParseStarterProject/Info.plist;
+				GCC_PREFIX_HEADER = "US/US-Prefix.pch";
+				INFOPLIST_FILE = US/Info.plist;
 				PRODUCT_NAME = US;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
