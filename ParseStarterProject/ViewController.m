@@ -4,11 +4,11 @@
 //  Copyright 2011-present Parse Inc. All rights reserved.
 //
 
-#import "ParseStarterProjectViewController.h"
+#import "ViewController.h"
 
 #import <Parse/Parse.h>
 
-@implementation ParseStarterProjectViewController
+@implementation ViewController
 
 #pragma mark -
 #pragma mark UIViewController

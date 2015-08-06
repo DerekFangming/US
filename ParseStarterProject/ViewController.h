@@ -6,6 +6,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ParseStarterProjectViewController : UIViewController
+@interface ViewController : UIViewController
 
 @end

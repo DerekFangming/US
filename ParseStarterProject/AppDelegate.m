@@ -15,10 +15,10 @@
 // If you want to use Crash Reporting - uncomment this line
 // #import <ParseCrashReporting/ParseCrashReporting.h>
 
-#import "ParseStarterProjectAppDelegate.h"
-#import "ParseStarterProjectViewController.h"
+#import "AppDelegate.h"
+#import "ViewController.h"
 
-@implementation ParseStarterProjectAppDelegate
+@implementation AppDelegate
 
 #pragma mark -
 #pragma mark UIApplicationDelegate
