@@ -32,6 +32,8 @@
 		81DDFD1919B4A60300BE649C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DDFD1719B4A60300BE649C /* Parse.framework */; };
 		81DDFD1A19B4A60300BE649C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DDFD1819B4A60300BE649C /* ParseFacebookUtils.framework */; };
 		91F1919F1B737A850037DA8A /* loginBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F1919E1B737A850037DA8A /* loginBg.png */; };
+		91F191A21B742AD90037DA8A /* loginUsernameIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191A11B742AD90037DA8A /* loginUsernameIcon.png */; };
+		91F191A41B742B6E0037DA8A /* loginPWIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191A31B742B6E0037DA8A /* loginPWIcon.png */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
 		C4C51B591613CE0800959FDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B561613CE0800959FDC /* Default@2x.png */; };
@@ -71,7 +73,9 @@
 		81A6CA601A2EA82800297C39 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81DDFD1719B4A60300BE649C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		81DDFD1819B4A60300BE649C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		91F1919E1B737A850037DA8A /* loginBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBg.png; sourceTree = "<group>"; };
+		91F1919E1B737A850037DA8A /* loginBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBg.png; path = US/loginBg.png; sourceTree = "<group>"; };
+		91F191A11B742AD90037DA8A /* loginUsernameIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginUsernameIcon.png; sourceTree = "<group>"; };
+		91F191A31B742B6E0037DA8A /* loginPWIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginPWIcon.png; sourceTree = "<group>"; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C4C51B541613CE0800959FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4C51B551613CE0800959FDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		09ABC06213A1D52D009C3FCF = {
 			isa = PBXGroup;
 			children = (
+				91F191A01B742A940037DA8A /* Image */,
 				09ABC07713A1D52D009C3FCF /* US */,
 				09ABC07013A1D52D009C3FCF /* Frameworks */,
 				09ABC06E13A1D52D009C3FCF /* Products */,
@@ -140,7 +145,6 @@
 		09ABC07713A1D52D009C3FCF /* US */ = {
 			isa = PBXGroup;
 			children = (
-				91F1919E1B737A850037DA8A /* loginBg.png */,
 				09ABC08013A1D52D009C3FCF /* AppDelegate.h */,
 				09ABC08113A1D52D009C3FCF /* AppDelegate.m */,
 				09ABC08313A1D52D009C3FCF /* MainWindow.xib */,
@@ -190,6 +194,16 @@
 			name = "System Frameworks";
 			sourceTree = "<group>";
 		};
+		91F191A01B742A940037DA8A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				91F1919E1B737A850037DA8A /* loginBg.png */,
+				91F191A31B742B6E0037DA8A /* loginPWIcon.png */,
+				91F191A11B742AD90037DA8A /* loginUsernameIcon.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +232,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					09ABC06C13A1D52D009C3FCF = {
+						DevelopmentTeam = X9723G3J94;
+					};
+				};
 			};
 			buildConfigurationList = 09ABC06713A1D52D009C3FCF /* Build configuration list for PBXProject "US" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -242,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91F1919F1B737A850037DA8A /* loginBg.png in Resources */,
+				91F191A21B742AD90037DA8A /* loginUsernameIcon.png in Resources */,
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
+				91F191A41B742B6E0037DA8A /* loginPWIcon.png in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				09ABC08B13A1D52E009C3FCF /* ViewController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
@@ -342,6 +363,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -353,6 +375,7 @@
 				GCC_PREFIX_HEADER = "US/US-Prefix.pch";
 				INFOPLIST_FILE = US/Info.plist;
 				PRODUCT_NAME = US;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -362,6 +385,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -372,6 +396,7 @@
 				GCC_PREFIX_HEADER = "US/US-Prefix.pch";
 				INFOPLIST_FILE = US/Info.plist;
 				PRODUCT_NAME = US;
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
