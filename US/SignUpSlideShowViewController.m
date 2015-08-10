@@ -25,18 +25,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [super viewDidLoad];
     [self createPageViewController];
     [self setupPageControl];
     
 }
 
 - (void) createPageViewController{
-    contentImage = @[@"loginPWIcon.png",
-                      @"loginBg.png",
-                      @"loginUsernameIcon.png"];
+    contentImage = @[@"signupIntroduction1.png",
+                      @"signupIntroduction2.png",
+                      @"signupIntroduction3.png"];
     
-    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    UIPageViewController *pageController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupSlideShow"];
     pageController.dataSource = self;
     
     if([contentImage count])
@@ -61,7 +60,7 @@
     
 }
 
-- (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerBeforeViewController:(SlideShowContentController *) viewController
+- (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerBeforeViewController:(UIViewController *) viewController
 {
     SlideShowContentController *itemController = (SlideShowContentController *) viewController;
     
@@ -73,7 +72,7 @@
     return nil;
 }
 
-- (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerAfterViewController:(SlideShowContentController *) viewController
+- (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerAfterViewController:(UIViewController *) viewController
 {
     SlideShowContentController *itemController = (SlideShowContentController *) viewController;
     
@@ -89,7 +88,7 @@
 {
     if (itemIndex < [contentImage count])
     {
-        SlideShowContentController *contentView = [[SlideShowContentController alloc] init];
+        SlideShowContentController *contentView = [self.storyboard instantiateViewControllerWithIdentifier:@"slideShowContent"];
         contentView.itemIndex=itemIndex;
         contentView.imageName = contentImage[itemIndex];
         return contentView;

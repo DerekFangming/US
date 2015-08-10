@@ -11,8 +11,10 @@
 @interface SlideShowContentController : UIViewController
 
 @property (nonatomic) NSUInteger itemIndex;
+
 @property (nonatomic, strong) NSString *imageName;
 
-@property (nonatomic, strong) UIImageView *contentImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end

@@ -18,16 +18,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _contentImageView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    _contentImageView.contentMode = UIViewContentModeScaleToFill;
-    _contentImageView.image = [UIImage imageNamed: _imageName];
+    //full size view
+    _imageView.contentMode = UIViewContentModeScaleToFill;
+    _imageView.image = [UIImage imageNamed: _imageName];
 }
 
+    //chang image
 - (void) setImageName:(NSString *)imageName{
     _imageName=imageName;
-    _contentImageView.image = [UIImage imageNamed: _imageName];
+    _imageView.image = [UIImage imageNamed: _imageName];
 }
-
 
 
 - (void)didReceiveMemoryWarning {

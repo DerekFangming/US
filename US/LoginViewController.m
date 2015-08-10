@@ -108,7 +108,7 @@
     signUpButton.clipsToBounds = YES;
     
     //custom view color
-    [_customView setBackgroundColor:[UIColor whiteColor]];
+    [_customView setBackgroundColor:[UIColor clearColor]];
     [_customView addSubview: loginLogo];
     [_customView addSubview: usernameLine];
     [_customView addSubview: PWLine];
@@ -134,8 +134,7 @@
     //sign in method
 - (void)signIn:(UIButton*)sender{
     NSLog(@"signin");
-    SignUpSlideShowViewController *signupSlideShowController = [[SignUpSlideShowViewController alloc] initWithNibName:@"SignUpSlideShowViewController" bundle:nil];
-    [self.navigationController pushViewController:signupSlideShowController animated:YES];
+    [self performSegueWithIdentifier:@"signupSlideShowSegue" sender:nil];
 }
 
     //sign up method
@@ -149,7 +148,7 @@
         keyboardListener = YES;
         NSLog(@"show");
         [UIView animateWithDuration:0.5f animations:^{
-            _customView.frame = CGRectOffset(self.view.frame, 0, -150);
+            _customView.frame = CGRectOffset(_customView.frame, 0, -150);
         }];
     }
 }
@@ -160,7 +159,7 @@
         keyboardListener = NO;
         NSLog(@"hide");
         [UIView animateWithDuration:0.5f animations:^{
-            _customView.frame = CGRectOffset(self.view.frame, 0, 150);
+            _customView.frame = CGRectOffset(_customView.frame, 0, 150);
         }];
     }
 }
