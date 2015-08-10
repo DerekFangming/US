@@ -6,8 +6,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController{
+    int keyboardListener;
+}
+
 
 @property (weak, nonatomic) IBOutlet UIView *customView;
+
 
 @end

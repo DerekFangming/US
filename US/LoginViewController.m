@@ -108,7 +108,7 @@
     signUpButton.clipsToBounds = YES;
     
     //custom view color
-    [_customView setBackgroundColor:[UIColor clearColor]];
+    [_customView setBackgroundColor:[UIColor whiteColor]];
     [_customView addSubview: loginLogo];
     [_customView addSubview: usernameLine];
     [_customView addSubview: PWLine];
@@ -136,7 +136,6 @@
     NSLog(@"signin");
     SignUpSlideShowViewController *signupSlideShowController = [[SignUpSlideShowViewController alloc] initWithNibName:@"SignUpSlideShowViewController" bundle:nil];
     [self.navigationController pushViewController:signupSlideShowController animated:YES];
-    [signupSlideShowController]
 }
 
     //sign up method
@@ -146,19 +145,24 @@
 
     //keyboard show and move frame upward
 - (void)keyboardWillShown:(NSNotification*)aNotification {
-    NSLog(@"show");
-    [UIView animateWithDuration:0.5f animations:^{
-        _customView.frame = CGRectOffset(_customView.frame, 0, -150);
-
-    }];
+    if (!keyboardListener) {
+        keyboardListener = YES;
+        NSLog(@"show");
+        [UIView animateWithDuration:0.5f animations:^{
+            _customView.frame = CGRectOffset(self.view.frame, 0, -150);
+        }];
+    }
 }
 
     //keyboard hide and move frame downward
 - (void)keyboardWillHidden:(NSNotification*)aNotification {
-    NSLog(@"hide");
-    [UIView animateWithDuration:0.5f animations:^{
-        _customView.frame = CGRectOffset(_customView.frame, 0, 150);
-    }];
+    if (keyboardListener) {
+        keyboardListener = NO;
+        NSLog(@"hide");
+        [UIView animateWithDuration:0.5f animations:^{
+            _customView.frame = CGRectOffset(self.view.frame, 0, 150);
+        }];
+    }
 }
 
     //touch dismiss keyboard
