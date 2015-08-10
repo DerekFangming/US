@@ -4,13 +4,15 @@
 //  Copyright 2011-present Parse Inc. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 
 #import <Parse/Parse.h>
 
 #import <QuartzCore/QuartzCore.h>
 
-@implementation ViewController
+#import "SignUpSlideShowViewController.h"
+
+@implementation LoginViewController
 
 #pragma mark -
 #pragma mark UIViewController
@@ -94,7 +96,7 @@
     
     //Sign Up Button
     UIButton *signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [signUpButton addTarget:self action:@selector(signIn:) forControlEvents: UIControlEventTouchUpInside];
+    [signUpButton addTarget:self action:@selector(signUp:) forControlEvents: UIControlEventTouchUpInside];
     [signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     signUpButton.frame = CGRectMake(halfWidth -113, halfLength + 200, 226, 44);
     signUpButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
@@ -116,32 +118,8 @@
     [_customView addSubview: PWTextField];
     [_customView addSubview: signInButton];
     [_customView addSubview: signUpButton];
+    [self.view sendSubviewToBack:signUpButton];
 
-    
-    /*
-    //login icon image
-    _usernameIcon.image=[UIImage imageNamed:@"loginUsernameIcon.png"];
-    _PWIcon.image=[UIImage imageNamed:@"loginPWIcon.png"];
-    
-    //login textfield
-    [_usernameTextfield setBackgroundColor:[UIColor clearColor]];//transparent
-    [_usernameTextfield setBorderStyle:UITextBorderStyleNone];//non-border
-    [_usernameTextfield setTextColor:[UIColor whiteColor]];//text color:white
-    [_PWTextfield setBackgroundColor:[UIColor clearColor]];
-    [_PWTextfield setBorderStyle:UITextBorderStyleNone];
-    [_PWTextfield setTextColor:[UIColor whiteColor]];
-    
-    //login line
-    _loginLine1.image=[UIImage imageNamed:@"loginLine.png"];
-    _loginLine2.image=[UIImage imageNamed:@"loginLine.png"];
-
-    //login button color
-    [_signInBotton setBackgroundColor:[self colorWithHexString:@"089DD8"]];
-    [_signUpButton setBackgroundColor:[self colorWithHexString:@"089DD8"]];
-    */
-    
-    
-    
     //show hide keyboard
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
@@ -156,6 +134,9 @@
     //sign in method
 - (void)signIn:(UIButton*)sender{
     NSLog(@"signin");
+    SignUpSlideShowViewController *signupSlideShowController = [[SignUpSlideShowViewController alloc] initWithNibName:@"SignUpSlideShowViewController" bundle:nil];
+    [self.navigationController pushViewController:signupSlideShowController animated:YES];
+    [signupSlideShowController]
 }
 
     //sign up method
@@ -165,7 +146,7 @@
 
     //keyboard show and move frame upward
 - (void)keyboardWillShown:(NSNotification*)aNotification {
-    //NSLog(@"show");
+    NSLog(@"show");
     [UIView animateWithDuration:0.5f animations:^{
         _customView.frame = CGRectOffset(_customView.frame, 0, -150);
 
@@ -174,11 +155,9 @@
 
     //keyboard hide and move frame downward
 - (void)keyboardWillHidden:(NSNotification*)aNotification {
-    //NSLog(@"hide");
+    NSLog(@"hide");
     [UIView animateWithDuration:0.5f animations:^{
         _customView.frame = CGRectOffset(_customView.frame, 0, 150);
-
-        
     }];
 }
 

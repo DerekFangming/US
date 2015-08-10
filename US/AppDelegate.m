@@ -16,7 +16,7 @@
 // #import <ParseCrashReporting/ParseCrashReporting.h>
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 

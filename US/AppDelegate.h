@@ -6,12 +6,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class ViewController;
+@class LoginViewController;
 
 @interface AppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 
-@property (nonatomic, strong) IBOutlet ViewController *viewController;
+@property (nonatomic, strong) IBOutlet LoginViewController *viewController;
 
 @end
