@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpSlideShowViewController : UIViewController
+@interface SignUpSlideShowViewController : UIViewController {
+    UIPageControl *pageControl;
+    NSInteger temp;
+    UIButton *signUpButton;
+    UIButton *backButton;
+
+}
 
 
 @end

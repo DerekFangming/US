@@ -1,25 +1,23 @@
 //
-//  ParseStarterProjectViewController.m
+//  SignupViewController.m
+//  US
 //
-//  Copyright 2011-present Parse Inc. All rights reserved.
+//  Created by NingFangming on 8/11/15.
+//
 //
 
-#import "LoginViewController.h"
+#import "SignupViewController.h"
 
-#import <Parse/Parse.h>
+@interface SignupViewController ()
 
-#import <QuartzCore/QuartzCore.h>
+@end
 
-#import "SignUpSlideShowViewController.h"
+@implementation SignupViewController
 
-@implementation LoginViewController
-
-#pragma mark -
-#pragma mark UIViewController
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
     
     //background image
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -35,17 +33,9 @@
     
     //login color
     UIColor *loginColor = [self colorWithHexString:@"959797"];
-
-    //login logo
-    UILabel *loginLogo = [[UILabel alloc] initWithFrame:CGRectMake(halfWidth - 42, halfLength - 133, 84, 74)];
-    loginLogo.textColor = [self colorWithHexString:@"ffffff"];
-    loginLogo.font = [UIFont fontWithName:@"Helvetica-Bold" size:60];
-    loginLogo.textAlignment = NSTextAlignmentCenter;
-    loginLogo.backgroundColor = [UIColor clearColor];
-    loginLogo.text = @"US";
     
     //LOGIN Username Line
-    UIImageView *usernameLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength +30, 226, 1)];
+    UIImageView *usernameLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength -100, 226, 1)];
     usernameLine.image=[UIImage imageNamed:@"loginLine.png"];
     usernameLine.contentMode = UIViewContentModeScaleToFill;
     
@@ -54,11 +44,16 @@
     PWLine.image=[UIImage imageNamed:@"loginLine.png"];
     PWLine.contentMode = UIViewContentModeScaleToFill;
     
+    // PW Confirm Line
+    
+    
+    
+    
     //Username Icon
     UIImageView *usernameIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength - 13, 30, 30)];
     usernameIcon.image=[UIImage imageNamed:@"loginUsernameIcon.png"];
     usernameIcon.contentMode = UIViewContentModeScaleToFill;
-
+    
     //PW Icon
     UIImageView *PWIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength +57, 30, 30)];
     PWIcon.image=[UIImage imageNamed:@"loginPWIcon.png"];
@@ -81,19 +76,6 @@
     [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     PWTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
     
-    //Sign In Button
-    UIButton *signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [signInButton addTarget:self action:@selector(signIn:) forControlEvents: UIControlEventTouchUpInside];
-    [signInButton setTitle:@"Sign In" forState:UIControlStateNormal];
-    signInButton.frame = CGRectMake(halfWidth -113, halfLength + 143, 226, 44);
-    signInButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
-    [signInButton setTitleColor:loginColor forState:UIControlStateNormal];
-    [signInButton setBackgroundColor:[UIColor clearColor]];
-    [[signInButton layer] setBorderWidth:1.0f];
-    [[signInButton layer] setBorderColor:loginColor.CGColor];
-    signInButton.layer.cornerRadius = 10;
-    signInButton.clipsToBounds = YES;
-    
     //Sign Up Button
     UIButton *signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [signUpButton addTarget:self action:@selector(signUp:) forControlEvents: UIControlEventTouchUpInside];
@@ -109,45 +91,36 @@
     
     //custom view color
     [_customView setBackgroundColor:[UIColor clearColor]];
-    [_customView addSubview: loginLogo];
     [_customView addSubview: usernameLine];
     [_customView addSubview: PWLine];
     [_customView addSubview: usernameIcon];
     [_customView addSubview: PWIcon];
     [_customView addSubview: usernameTextField];
     [_customView addSubview: PWTextField];
-    [_customView addSubview: signInButton];
     [_customView addSubview: signUpButton];
     [self.view sendSubviewToBack:signUpButton];
-
+    
     //show hide keyboard
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
     
-    
-    //database
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar123";
-    //[testObject saveInBackground];
-}
 
-    //sign in method
-- (void)signIn:(UIButton*)sender{
-    //NSLog(@"signin");
+    
+
 }
 
     //sign up method
 - (void)signUp:(UIButton*)sender{
     //NSLog(@"signup");
     [self performSegueWithIdentifier:@"signupSlideShowSegue" sender:nil];
-
+    
 }
 
     //keyboard show and move frame upward
 - (void)keyboardWillShown:(NSNotification*)aNotification {
     if (!keyboardListener) {
         keyboardListener = YES;
-//        NSLog(@"show");
+        //        NSLog(@"show");
         [UIView animateWithDuration:0.5f animations:^{
             _customView.frame = CGRectOffset(_customView.frame, 0, -150);
         }];
@@ -158,7 +131,7 @@
 - (void)keyboardWillHidden:(NSNotification*)aNotification {
     if (keyboardListener) {
         keyboardListener = NO;
-//        NSLog(@"hide");
+        //        NSLog(@"hide");
         [UIView animateWithDuration:0.5f animations:^{
             _customView.frame = CGRectOffset(_customView.frame, 0, 150);
         }];
@@ -207,16 +180,21 @@
                            alpha:1.0f];
 }
 
+
+
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-
-    // Release any cached data, images, etc that aren't in use.
+    // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end

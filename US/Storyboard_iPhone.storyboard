@@ -39,6 +39,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="VkI-wU-L0W" kind="modal" identifier="backToLogin" id="Yxc-Aw-MZJ"/>
+                        <segue destination="59E-vG-NcU" kind="modal" identifier="SlideShowToSignup" id="xyZ-2v-byZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qd3-sx-4I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +51,7 @@
         <!--Page View Controller-->
         <scene sceneID="yJS-x9-UiC">
             <objects>
-                <pageViewController storyboardIdentifier="SignupSlideShow" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="4q7-rI-mWQ" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="SignupSlideShow" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="4q7-rI-mWQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6a-Yv-rn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="743" y="378"/>
@@ -74,6 +78,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBq-l1-J17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1111" y="378"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="aQo-b1-3Mn">
+            <objects>
+                <viewController id="59E-vG-NcU" customClass="SignupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="end-VD-Z4y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="h9g-go-gOU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="customView" destination="h9g-go-gOU" id="tTN-LF-LfC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMc-yh-nFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="1136"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="weN-Ds-N9v">
+            <objects>
+                <viewController id="Fhq-eZ-Kji" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pgu-Q7-ycZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Umo-M3-M9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
