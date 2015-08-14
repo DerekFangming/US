@@ -28,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dt-Nr-Tec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5" y="378"/>
+            <point key="canvasLocation" x="-77" y="1160"/>
         </scene>
         <!--Sign Up Slide Show View Controller-->
         <scene sceneID="SkQ-U6-XEN">
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qd3-sx-4I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="378"/>
+            <point key="canvasLocation" x="347" y="378"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="yJS-x9-UiC">
@@ -97,24 +97,77 @@
                     </view>
                     <connections>
                         <outlet property="customView" destination="h9g-go-gOU" id="tTN-LF-LfC"/>
+                        <segue destination="VkI-wU-L0W" kind="modal" identifier="backToLoginFromSignupNow" id="hdX-MV-dZ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMc-yh-nFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="1136"/>
+            <point key="canvasLocation" x="-77" y="378"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="weN-Ds-N9v">
+        <!--Item 2-->
+        <scene sceneID="oJo-QC-5NE">
             <objects>
-                <viewController id="Fhq-eZ-Kji" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pgu-Q7-ycZ">
+                <viewController id="tYN-gW-D9B" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IIQ-IM-yAs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="bVQ-Yg-M3c"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Umo-M3-M9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhF-va-7pT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1555" y="1486"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="K0I-0o-NDN">
+            <objects>
+                <viewController id="iIN-WV-HWk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dV8-b5-PQy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Gs9-Cm-34d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSI-MD-oP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1555" y="826"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="FgG-P6-w3a">
+            <objects>
+                <viewController id="SW1-PK-NvR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0DZ-rH-8fQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="2ep-5U-uxs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OlY-il-uzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="1160"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="7v4-nG-1aD">
+            <objects>
+                <tabBarController id="Mri-6p-W6c" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wXM-Qr-jQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="iIN-WV-HWk" kind="relationship" relationship="viewControllers" id="p8p-8S-prp"/>
+                        <segue destination="tYN-gW-D9B" kind="relationship" relationship="viewControllers" id="zTk-Y7-mPz"/>
+                        <segue destination="SW1-PK-NvR" kind="relationship" relationship="viewControllers" id="Zvv-nN-wBD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIx-sz-YHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="1160"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -122,4 +175,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="hdX-MV-dZ8"/>
+    </inferredMetricsTieBreakers>
 </document>

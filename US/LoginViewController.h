@@ -8,6 +8,9 @@
 
 @interface LoginViewController : UIViewController{
     int keyboardListener;
+    UITextField *usernameTextField;
+    UITextField *PWTextField;
+    
 }
 
 

@@ -42,6 +42,7 @@
 		91F191C21B7922380037DA8A /* signupIntroduction3.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191BF1B7922380037DA8A /* signupIntroduction3.png */; };
 		91F191C71B7AEE3A0037DA8A /* cancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191C61B7AEE3A0037DA8A /* cancelButton.png */; };
 		91F191CA1B7AF4570037DA8A /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F191C91B7AF4570037DA8A /* SignupViewController.m */; };
+		91F191CE1B7D28B80037DA8A /* emailIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191CD1B7D28B80037DA8A /* emailIcon.png */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
 		C4C51B591613CE0800959FDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B561613CE0800959FDC /* Default@2x.png */; };
@@ -95,6 +96,7 @@
 		91F191C61B7AEE3A0037DA8A /* cancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelButton.png; sourceTree = "<group>"; };
 		91F191C81B7AF4570037DA8A /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		91F191C91B7AF4570037DA8A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		91F191CD1B7D28B80037DA8A /* emailIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailIcon.png; sourceTree = "<group>"; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C4C51B541613CE0800959FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4C51B551613CE0800959FDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -166,16 +168,16 @@
 		09ABC07713A1D52D009C3FCF /* US */ = {
 			isa = PBXGroup;
 			children = (
+				09ABC07813A1D52D009C3FCF /* Supporting Files */,
+				91F191BB1B78260D0037DA8A /* Storyboard_iPhone.storyboard */,
 				09ABC08013A1D52D009C3FCF /* AppDelegate.h */,
 				09ABC08113A1D52D009C3FCF /* AppDelegate.m */,
 				09ABC08613A1D52E009C3FCF /* LoginViewController.h */,
 				09ABC08713A1D52E009C3FCF /* LoginViewController.m */,
-				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 				91F191B11B7795DA0037DA8A /* SignUpSlideShowViewController.h */,
 				91F191B21B7795DA0037DA8A /* SignUpSlideShowViewController.m */,
 				91F191B61B7797760037DA8A /* SlideShowContentController.h */,
 				91F191B71B7797760037DA8A /* SlideShowContentController.m */,
-				91F191BB1B78260D0037DA8A /* Storyboard_iPhone.storyboard */,
 				91F191C81B7AF4570037DA8A /* SignupViewController.h */,
 				91F191C91B7AF4570037DA8A /* SignupViewController.m */,
 			);
@@ -223,6 +225,7 @@
 		91F191A01B742A940037DA8A /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				91F191CD1B7D28B80037DA8A /* emailIcon.png */,
 				91F191BD1B7922380037DA8A /* signupIntroduction1.png */,
 				91F191BE1B7922380037DA8A /* signupIntroduction2.png */,
 				91F191BF1B7922380037DA8A /* signupIntroduction3.png */,
@@ -296,6 +299,7 @@
 				91F191BC1B78260D0037DA8A /* Storyboard_iPhone.storyboard in Resources */,
 				91F191AC1B7654210037DA8A /* loginUsernameIcon.png in Resources */,
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
+				91F191CE1B7D28B80037DA8A /* emailIcon.png in Resources */,
 				91F191AE1B76549E0037DA8A /* loginLine.png in Resources */,
 				91F191C21B7922380037DA8A /* signupIntroduction3.png in Resources */,
 				91F191C01B7922380037DA8A /* signupIntroduction1.png in Resources */,

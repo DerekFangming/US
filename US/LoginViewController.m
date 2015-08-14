@@ -65,21 +65,25 @@
     PWIcon.contentMode = UIViewContentModeScaleToFill;
     
     //Username Textfield
-    UITextField *usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength - 10, 190, 30)];
+    usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength - 10, 190, 30)];
     usernameTextField.textColor = [UIColor whiteColor];
     usernameTextField.backgroundColor = [UIColor clearColor];
     UIColor *placeholderColor = [self colorWithHexString:@"1E1E1E"];
     usernameTextField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     usernameTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
+    usernameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    usernameTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
     //PW Textfield
-    UITextField *PWTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength + 60, 190, 30)];
+    PWTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength + 60, 190, 30)];
     PWTextField.textColor = [UIColor whiteColor];
     PWTextField.backgroundColor = [UIColor clearColor];
     PWTextField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     PWTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
+    PWTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    PWTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
     //Sign In Button
     UIButton *signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -134,6 +138,16 @@
     //sign in method
 - (void)signIn:(UIButton*)sender{
     //NSLog(@"signin");
+    [PFUser logInWithUsernameInBackground:usernameTextField.text password:PWTextField.text block:^(PFUser *user, NSError *error){
+        if (user) {
+            //segue method
+        }
+        else{
+            UIAlertView *signupPopup = [[UIAlertView alloc] initWithTitle:@"Opps..." message:[error userInfo][@"error"] delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
+            [signupPopup show];
+
+        }
+    }];
 }
 
     //sign up method

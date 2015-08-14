@@ -8,6 +8,9 @@
 
 #import "SignupViewController.h"
 
+#import <Parse/Parse.h>
+
+
 @interface SignupViewController ()
 
 @end
@@ -35,46 +38,85 @@
     UIColor *loginColor = [self colorWithHexString:@"959797"];
     
     //LOGIN Username Line
-    UIImageView *usernameLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength -100, 226, 1)];
+    UIImageView *usernameLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength -60, 226, 1)];
     usernameLine.image=[UIImage imageNamed:@"loginLine.png"];
     usernameLine.contentMode = UIViewContentModeScaleToFill;
     
     //PW Line
-    UIImageView *PWLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength + 100, 226, 1)];
+    UIImageView *PWLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength +10, 226, 1)];
     PWLine.image=[UIImage imageNamed:@"loginLine.png"];
     PWLine.contentMode = UIViewContentModeScaleToFill;
     
     // PW Confirm Line
+    UIImageView *PWConfirmLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength +80, 226, 1)];
+    PWConfirmLine.image=[UIImage imageNamed:@"loginLine.png"];
+    PWConfirmLine.contentMode = UIViewContentModeScaleToFill;
     
-    
-    
+    // Email Line
+    UIImageView *emailLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength +150, 226, 1)];
+    emailLine.image=[UIImage imageNamed:@"loginLine.png"];
+    emailLine.contentMode = UIViewContentModeScaleToFill;
     
     //Username Icon
-    UIImageView *usernameIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength - 13, 30, 30)];
+    UIImageView *usernameIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength - 100, 30, 30)];
     usernameIcon.image=[UIImage imageNamed:@"loginUsernameIcon.png"];
     usernameIcon.contentMode = UIViewContentModeScaleToFill;
     
     //PW Icon
-    UIImageView *PWIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength +57, 30, 30)];
+    UIImageView *PWIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength -30, 30, 30)];
     PWIcon.image=[UIImage imageNamed:@"loginPWIcon.png"];
     PWIcon.contentMode = UIViewContentModeScaleToFill;
     
+    //PW Confirm Icon
+    UIImageView *PWConfirmIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength + 40, 30, 30)];
+    PWConfirmIcon.image=[UIImage imageNamed:@"loginPWIcon.png"];
+    PWConfirmIcon.contentMode = UIViewContentModeScaleToFill;
+    
+    //Email Icon
+    UIImageView *emailIcon = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength + 110, 30, 30)];
+    emailIcon.image=[UIImage imageNamed:@"emailIcon.png"];
+    emailIcon.contentMode = UIViewContentModeScaleToFill;
+    
     //Username Textfield
-    UITextField *usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength - 10, 190, 30)];
+    usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength - 100, 190, 30)];
     usernameTextField.textColor = [UIColor whiteColor];
     usernameTextField.backgroundColor = [UIColor clearColor];
     UIColor *placeholderColor = [self colorWithHexString:@"1E1E1E"];
     usernameTextField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     usernameTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
+    usernameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    usernameTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
     //PW Textfield
-    UITextField *PWTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength + 60, 190, 30)];
+    PWTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength -30, 190, 30)];
     PWTextField.textColor = [UIColor whiteColor];
     PWTextField.backgroundColor = [UIColor clearColor];
     PWTextField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     PWTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
+    PWTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    PWTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    
+    //PW Confirm Textfield
+    PWConfirmTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength + 40, 190, 30)];
+    PWConfirmTextField.textColor = [UIColor whiteColor];
+    PWConfirmTextField.backgroundColor = [UIColor clearColor];
+    PWConfirmTextField.attributedPlaceholder =
+    [[NSAttributedString alloc] initWithString:@"Confirm Password" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
+    PWConfirmTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
+    PWConfirmTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    PWConfirmTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    
+    //Email Textfield
+    emailTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength + 110, 190, 30)];
+    emailTextField.textColor = [UIColor whiteColor];
+    emailTextField.backgroundColor = [UIColor clearColor];
+    emailTextField.attributedPlaceholder =
+    [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
+    emailTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
+    emailTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    emailTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
     //Sign Up Button
     UIButton *signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -89,6 +131,12 @@
     signUpButton.layer.cornerRadius = 10;
     signUpButton.clipsToBounds = YES;
     
+    //Back Button
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [backButton addTarget:self action:@selector(backToLogin:) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"cancelButton.png"] forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(30, 48, 30, 30);
+    
     //custom view color
     [_customView setBackgroundColor:[UIColor clearColor]];
     [_customView addSubview: usernameLine];
@@ -98,6 +146,13 @@
     [_customView addSubview: usernameTextField];
     [_customView addSubview: PWTextField];
     [_customView addSubview: signUpButton];
+    [_customView addSubview: PWConfirmLine];
+    [_customView addSubview: PWConfirmIcon];
+    [_customView addSubview: PWConfirmTextField];
+    [_customView addSubview: emailIcon];
+    [_customView addSubview: emailLine];
+    [_customView addSubview: emailTextField];
+    [_customView addSubview: backButton];
     [self.view sendSubviewToBack:signUpButton];
     
     //show hide keyboard
@@ -109,10 +164,43 @@
 
 }
 
+- (void) backToLogin:(UIButton*)sender{
+    [self performSegueWithIdentifier:@"backToLoginFromSignupNow" sender:nil];
+    
+}
+
     //sign up method
 - (void)signUp:(UIButton*)sender{
     //NSLog(@"signup");
-    [self performSegueWithIdentifier:@"signupSlideShowSegue" sender:nil];
+    
+    
+    if ([usernameTextField.text isEqualToString:@""] || [PWTextField.text isEqualToString:@""] || [PWConfirmTextField.text isEqualToString:@""] || [emailTextField.text isEqualToString:@""]) {
+        UIAlertView *signupPopup = [[UIAlertView alloc] initWithTitle:@"Opps..." message:@"r u fucking kidding me?" delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
+        [signupPopup show];
+    }
+    else if (![PWTextField.text isEqualToString:PWConfirmTextField.text]){
+        UIAlertView *signupPopup1 = [[UIAlertView alloc] initWithTitle:@"Opps..." message:@"NFM your PW doesnt match" delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
+        [signupPopup1 show];
+    }
+    
+    else{
+        PFUser *user = [PFUser user];
+        user.username = usernameTextField.text;
+        user.password = PWTextField.text;
+        user.email = emailTextField.text;
+        
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+            if(!error){
+                //segue to ...
+                
+            }
+            else{
+                UIAlertView *signupPopup1 = [[UIAlertView alloc] initWithTitle:@"Opps..." message:[error userInfo][@"error"] delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
+                [signupPopup1 show];
+
+            }
+        }];
+    }
     
 }
 
