@@ -8,7 +8,7 @@
 
 #import "SignUpSlideShowViewController.h"
 #import "SlideShowContentController.h"
-
+#import "USColor.h"
 
 @interface SignUpSlideShowViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -28,16 +28,18 @@
     [self createPageViewController];
     [self setupPageControl];
     
+    
+    
     //Sign Up Button
     signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [signUpButton addTarget:self action:@selector(signUp:) forControlEvents: UIControlEventTouchUpInside];
     [signUpButton setTitle:@"Sign Up Now" forState:UIControlStateNormal];
     signUpButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2 -113, [UIScreen mainScreen].bounds.size.height -100, 226, 44);
     signUpButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
-    [signUpButton setTitleColor:[self colorWithHexString:@"959797"] forState:UIControlStateNormal];
+    [signUpButton setTitleColor:[USColor loginColor] forState:UIControlStateNormal];
     [signUpButton setBackgroundColor:[UIColor clearColor]];
     [[signUpButton layer] setBorderWidth:1.0f];
-    [[signUpButton layer] setBorderColor:[self colorWithHexString:@"959797"].CGColor];
+    [[signUpButton layer] setBorderColor:((UIColor *) [USColor loginColor]).CGColor];
     signUpButton.layer.cornerRadius = 10;
     signUpButton.clipsToBounds = YES;
     
@@ -46,63 +48,26 @@
     [backButton addTarget:self action:@selector(backToLogin:) forControlEvents:UIControlEventTouchUpInside];
     [backButton setBackgroundImage:[UIImage imageNamed:@"cancelButton.png"] forState:UIControlStateNormal];
     backButton.frame = CGRectMake(30, 48, 30, 30);
-    
-    
-    
+
+    //add button to view
     [self.view addSubview: signUpButton];
     [self.view sendSubviewToBack:signUpButton];
-    
     [self.view addSubview:backButton];
     
 }
 
+    //back to login page segue
 - (void) backToLogin:(UIButton*)sender{
     [self performSegueWithIdentifier:@"backToLogin" sender:nil];
 
 }
 
+    //slide show to signup page segue
 - (void) signUp:(UIButton*)sender{
     [self performSegueWithIdentifier:@"SlideShowToSignup" sender:nil];
 }
 
-//hex color
-- (UIColor*)colorWithHexString:(NSString*)hex
-{
-    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-    
-    // String should be 6 or 8 characters
-    if ([cString length] < 6) return [UIColor grayColor];
-    
-    // strip 0X if it appears
-    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
-    
-    if ([cString length] != 6) return  [UIColor grayColor];
-    
-    // Separate into r, g, b substrings
-    NSRange range;
-    range.location = 0;
-    range.length = 2;
-    NSString *rString = [cString substringWithRange:range];
-    
-    range.location = 2;
-    NSString *gString = [cString substringWithRange:range];
-    
-    range.location = 4;
-    NSString *bString = [cString substringWithRange:range];
-    
-    // Scan values
-    unsigned int r, g, b;
-    [[NSScanner scannerWithString:rString] scanHexInt:&r];
-    [[NSScanner scannerWithString:gString] scanHexInt:&g];
-    [[NSScanner scannerWithString:bString] scanHexInt:&b];
-    
-    return [UIColor colorWithRed:((float) r / 255.0f)
-                           green:((float) g / 255.0f)
-                            blue:((float) b / 255.0f)
-                           alpha:1.0f];
-}
-
-
+    //slide view
 - (void) createPageViewController{
     contentImage = @[@"signupIntroduction1.png",
                       @"signupIntroduction2.png",
@@ -126,7 +91,7 @@
     [self.pageViewController didMoveToParentViewController: self];
 }
 
-
+    //dot dot dot
 - (void) setupPageControl
 {
     pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 -40,
@@ -138,10 +103,11 @@
     
 }
 
+
 -(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers{
 }
 
-
+    //detect the action of flipping page
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed{
     if (finished || completed) {
         SlideShowContentController *viewController = [self.pageViewController.viewControllers lastObject];
@@ -155,7 +121,7 @@
     }
 }
 
-
+    // backward page
 - (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerBeforeViewController:(UIViewController *) viewController
 {
     SlideShowContentController *itemController = (SlideShowContentController *) viewController;
@@ -169,6 +135,7 @@
     return nil;
 }
 
+    // forward page
 - (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerAfterViewController:(UIViewController *) viewController
 {
     SlideShowContentController *itemController = (SlideShowContentController *) viewController;
@@ -182,6 +149,7 @@
     return nil;
 }
 
+    //next image
 - (SlideShowContentController *) itemControllerForIndex: (NSUInteger) itemIndex
 {
     if (itemIndex < [contentImage count])

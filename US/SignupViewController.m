@@ -10,6 +10,7 @@
 
 #import <Parse/Parse.h>
 
+#import "USColor.h"
 
 @interface SignupViewController ()
 
@@ -33,9 +34,6 @@
     //define screen width & length
     CGFloat halfWidth = [UIScreen mainScreen].bounds.size.width/2; //Half Width
     CGFloat halfLength = [UIScreen mainScreen].bounds.size.height/2; //Half Heigh
-    
-    //login color
-    UIColor *loginColor = [self colorWithHexString:@"959797"];
     
     //LOGIN Username Line
     UIImageView *usernameLine = [[UIImageView alloc] initWithFrame:CGRectMake(halfWidth -113, halfLength -60, 226, 1)];
@@ -81,7 +79,7 @@
     usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength - 100, 190, 30)];
     usernameTextField.textColor = [UIColor whiteColor];
     usernameTextField.backgroundColor = [UIColor clearColor];
-    UIColor *placeholderColor = [self colorWithHexString:@"1E1E1E"];
+    UIColor *placeholderColor = [USColor placeholderColor];
     usernameTextField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     usernameTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
@@ -124,10 +122,10 @@
     [signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     signUpButton.frame = CGRectMake(halfWidth -113, halfLength + 200, 226, 44);
     signUpButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
-    [signUpButton setTitleColor:loginColor forState:UIControlStateNormal];
+    [signUpButton setTitleColor:[USColor loginColor] forState:UIControlStateNormal];
     [signUpButton setBackgroundColor:[UIColor clearColor]];
     [[signUpButton layer] setBorderWidth:1.0f];
-    [[signUpButton layer] setBorderColor:loginColor.CGColor];
+    [[signUpButton layer] setBorderColor:((UIColor *) [USColor loginColor]).CGColor];
     signUpButton.layer.cornerRadius = 10;
     signUpButton.clipsToBounds = YES;
     
@@ -158,12 +156,9 @@
     //show hide keyboard
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
-    
-
-    
-
 }
 
+    //back to login page
 - (void) backToLogin:(UIButton*)sender{
     [self performSegueWithIdentifier:@"backToLoginFromSignupNow" sender:nil];
     
@@ -175,11 +170,11 @@
     
     
     if ([usernameTextField.text isEqualToString:@""] || [PWTextField.text isEqualToString:@""] || [PWConfirmTextField.text isEqualToString:@""] || [emailTextField.text isEqualToString:@""]) {
-        UIAlertView *signupPopup = [[UIAlertView alloc] initWithTitle:@"Opps..." message:@"r u fucking kidding me?" delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
+        UIAlertView *signupPopup = [[UIAlertView alloc] initWithTitle:@"Opps..." message:@"Please fill up your information" delegate:self cancelButtonTitle:@"Fine" otherButtonTitles:nil];
         [signupPopup show];
     }
     else if (![PWTextField.text isEqualToString:PWConfirmTextField.text]){
-        UIAlertView *signupPopup1 = [[UIAlertView alloc] initWithTitle:@"Opps..." message:@"NFM your PW doesnt match" delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
+        UIAlertView *signupPopup1 = [[UIAlertView alloc] initWithTitle:@"Opps..." message:@"The passwords do not match" delegate:self cancelButtonTitle:@"Fine" otherButtonTitles:nil];
         [signupPopup1 show];
     }
     
@@ -195,7 +190,7 @@
                 
             }
             else{
-                UIAlertView *signupPopup1 = [[UIAlertView alloc] initWithTitle:@"Opps..." message:[error userInfo][@"error"] delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
+                UIAlertView *signupPopup1 = [[UIAlertView alloc] initWithTitle:@"Opps..." message:[error userInfo][@"error"] delegate:self cancelButtonTitle:@"Fine" otherButtonTitles:nil];
                 [signupPopup1 show];
 
             }
@@ -230,44 +225,6 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
-
-    //hex color
--(UIColor*)colorWithHexString:(NSString*)hex
-{
-    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-    
-    // String should be 6 or 8 characters
-    if ([cString length] < 6) return [UIColor grayColor];
-    
-    // strip 0X if it appears
-    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
-    
-    if ([cString length] != 6) return  [UIColor grayColor];
-    
-    // Separate into r, g, b substrings
-    NSRange range;
-    range.location = 0;
-    range.length = 2;
-    NSString *rString = [cString substringWithRange:range];
-    
-    range.location = 2;
-    NSString *gString = [cString substringWithRange:range];
-    
-    range.location = 4;
-    NSString *bString = [cString substringWithRange:range];
-    
-    // Scan values
-    unsigned int r, g, b;
-    [[NSScanner scannerWithString:rString] scanHexInt:&r];
-    [[NSScanner scannerWithString:gString] scanHexInt:&g];
-    [[NSScanner scannerWithString:bString] scanHexInt:&b];
-    
-    return [UIColor colorWithRed:((float) r / 255.0f)
-                           green:((float) g / 255.0f)
-                            blue:((float) b / 255.0f)
-                           alpha:1.0f];
-}
-
 
 
 - (void)didReceiveMemoryWarning {

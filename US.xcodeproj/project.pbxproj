@@ -43,6 +43,17 @@
 		91F191C71B7AEE3A0037DA8A /* cancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191C61B7AEE3A0037DA8A /* cancelButton.png */; };
 		91F191CA1B7AF4570037DA8A /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F191C91B7AF4570037DA8A /* SignupViewController.m */; };
 		91F191CE1B7D28B80037DA8A /* emailIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191CD1B7D28B80037DA8A /* emailIcon.png */; };
+		91F191D21B7E70040037DA8A /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F191D11B7E70040037DA8A /* MainTabBarController.m */; };
+		91F191D81B7E71E60037DA8A /* TimerTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F191D71B7E71E60037DA8A /* TimerTabBarViewController.m */; };
+		91F191DB1B7E71F90037DA8A /* StoryTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F191DA1B7E71F90037DA8A /* StoryTabBarViewController.m */; };
+		91F191DE1B7E720F0037DA8A /* AccountTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F191DD1B7E720F0037DA8A /* AccountTabBarViewController.m */; };
+		91F191E01B8107A20037DA8A /* storyTabImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191DF1B8107A20037DA8A /* storyTabImg@2x.png */; };
+		91F191E21B8108390037DA8A /* timerTabImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191E11B8108390037DA8A /* timerTabImg@2x.png */; };
+		91F191E81B810E710037DA8A /* USColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F191E71B810E710037DA8A /* USColor.m */; };
+		91F191EC1B811B690037DA8A /* accountTabImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191EB1B811B690037DA8A /* accountTabImg@2x.png */; };
+		91F191EE1B813E880037DA8A /* whiteCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191ED1B813E880037DA8A /* whiteCheck.png */; };
+		91F191F01B8140240037DA8A /* whiteCheckmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191EF1B8140240037DA8A /* whiteCheckmark.png */; };
+		91F191F61B816BC70037DA8A /* timerBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F191F51B816BC70037DA8A /* timerBG.jpg */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
 		C4C51B591613CE0800959FDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B561613CE0800959FDC /* Default@2x.png */; };
@@ -97,6 +108,22 @@
 		91F191C81B7AF4570037DA8A /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		91F191C91B7AF4570037DA8A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		91F191CD1B7D28B80037DA8A /* emailIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailIcon.png; sourceTree = "<group>"; };
+		91F191D01B7E70040037DA8A /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		91F191D11B7E70040037DA8A /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		91F191D61B7E71E60037DA8A /* TimerTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerTabBarViewController.h; sourceTree = "<group>"; };
+		91F191D71B7E71E60037DA8A /* TimerTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerTabBarViewController.m; sourceTree = "<group>"; };
+		91F191D91B7E71F90037DA8A /* StoryTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryTabBarViewController.h; sourceTree = "<group>"; };
+		91F191DA1B7E71F90037DA8A /* StoryTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTabBarViewController.m; sourceTree = "<group>"; };
+		91F191DC1B7E720F0037DA8A /* AccountTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTabBarViewController.h; sourceTree = "<group>"; };
+		91F191DD1B7E720F0037DA8A /* AccountTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTabBarViewController.m; sourceTree = "<group>"; };
+		91F191DF1B8107A20037DA8A /* storyTabImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "storyTabImg@2x.png"; sourceTree = "<group>"; };
+		91F191E11B8108390037DA8A /* timerTabImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timerTabImg@2x.png"; sourceTree = "<group>"; };
+		91F191E61B810E710037DA8A /* USColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USColor.h; sourceTree = "<group>"; };
+		91F191E71B810E710037DA8A /* USColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USColor.m; sourceTree = "<group>"; };
+		91F191EB1B811B690037DA8A /* accountTabImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accountTabImg@2x.png"; sourceTree = "<group>"; };
+		91F191ED1B813E880037DA8A /* whiteCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCheck.png; sourceTree = "<group>"; };
+		91F191EF1B8140240037DA8A /* whiteCheckmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCheckmark.png; sourceTree = "<group>"; };
+		91F191F51B816BC70037DA8A /* timerBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timerBG.jpg; sourceTree = "<group>"; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C4C51B541613CE0800959FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4C51B551613CE0800959FDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -168,6 +195,7 @@
 		09ABC07713A1D52D009C3FCF /* US */ = {
 			isa = PBXGroup;
 			children = (
+				91F191E51B810E0F0037DA8A /* Helper */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 				91F191BB1B78260D0037DA8A /* Storyboard_iPhone.storyboard */,
 				09ABC08013A1D52D009C3FCF /* AppDelegate.h */,
@@ -180,6 +208,14 @@
 				91F191B71B7797760037DA8A /* SlideShowContentController.m */,
 				91F191C81B7AF4570037DA8A /* SignupViewController.h */,
 				91F191C91B7AF4570037DA8A /* SignupViewController.m */,
+				91F191D01B7E70040037DA8A /* MainTabBarController.h */,
+				91F191D11B7E70040037DA8A /* MainTabBarController.m */,
+				91F191D61B7E71E60037DA8A /* TimerTabBarViewController.h */,
+				91F191D71B7E71E60037DA8A /* TimerTabBarViewController.m */,
+				91F191D91B7E71F90037DA8A /* StoryTabBarViewController.h */,
+				91F191DA1B7E71F90037DA8A /* StoryTabBarViewController.m */,
+				91F191DC1B7E720F0037DA8A /* AccountTabBarViewController.h */,
+				91F191DD1B7E720F0037DA8A /* AccountTabBarViewController.m */,
 			);
 			path = US;
 			sourceTree = "<group>";
@@ -225,6 +261,12 @@
 		91F191A01B742A940037DA8A /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				91F191F51B816BC70037DA8A /* timerBG.jpg */,
+				91F191EF1B8140240037DA8A /* whiteCheckmark.png */,
+				91F191ED1B813E880037DA8A /* whiteCheck.png */,
+				91F191DF1B8107A20037DA8A /* storyTabImg@2x.png */,
+				91F191EB1B811B690037DA8A /* accountTabImg@2x.png */,
+				91F191E11B8108390037DA8A /* timerTabImg@2x.png */,
 				91F191CD1B7D28B80037DA8A /* emailIcon.png */,
 				91F191BD1B7922380037DA8A /* signupIntroduction1.png */,
 				91F191BE1B7922380037DA8A /* signupIntroduction2.png */,
@@ -236,6 +278,15 @@
 				91F191AB1B7654210037DA8A /* loginUsernameIcon.png */,
 			);
 			name = Image;
+			sourceTree = "<group>";
+		};
+		91F191E51B810E0F0037DA8A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				91F191E61B810E710037DA8A /* USColor.h */,
+				91F191E71B810E710037DA8A /* USColor.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,14 +351,20 @@
 				91F191AC1B7654210037DA8A /* loginUsernameIcon.png in Resources */,
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
 				91F191CE1B7D28B80037DA8A /* emailIcon.png in Resources */,
+				91F191EE1B813E880037DA8A /* whiteCheck.png in Resources */,
 				91F191AE1B76549E0037DA8A /* loginLine.png in Resources */,
+				91F191E01B8107A20037DA8A /* storyTabImg@2x.png in Resources */,
 				91F191C21B7922380037DA8A /* signupIntroduction3.png in Resources */,
+				91F191EC1B811B690037DA8A /* accountTabImg@2x.png in Resources */,
 				91F191C01B7922380037DA8A /* signupIntroduction1.png in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				91F191C11B7922380037DA8A /* signupIntroduction2.png in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
+				91F191F61B816BC70037DA8A /* timerBG.jpg in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
+				91F191F01B8140240037DA8A /* whiteCheckmark.png in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
+				91F191E21B8108390037DA8A /* timerTabImg@2x.png in Resources */,
 				91F191C71B7AEE3A0037DA8A /* cancelButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,11 +394,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				91F191CA1B7AF4570037DA8A /* SignupViewController.m in Sources */,
+				91F191D21B7E70040037DA8A /* MainTabBarController.m in Sources */,
+				91F191E81B810E710037DA8A /* USColor.m in Sources */,
+				91F191D81B7E71E60037DA8A /* TimerTabBarViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
+				91F191DE1B7E720F0037DA8A /* AccountTabBarViewController.m in Sources */,
 				91F191B91B7797760037DA8A /* SlideShowContentController.m in Sources */,
 				91F191B41B7795DA0037DA8A /* SignUpSlideShowViewController.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* AppDelegate.m in Sources */,
 				09ABC08813A1D52E009C3FCF /* LoginViewController.m in Sources */,
+				91F191DB1B7E71F90037DA8A /* StoryTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,16 @@
 
 #import "SignUpSlideShowViewController.h"
 
+#import "MainTabBarController.h"
+
+#import "TimerTabBarViewController.h"
+
+#import "AccountTabBarViewController.h"
+
+#import "StoryTabBarViewController.h"
+
+#import "USColor.h"
+
 @implementation LoginViewController
 
 #pragma mark -
@@ -34,11 +44,12 @@
     CGFloat halfLength = [UIScreen mainScreen].bounds.size.height/2; //Half Heigh
     
     //login color
-    UIColor *loginColor = [self colorWithHexString:@"959797"];
-
+    UIColor *loginColor = [USColor loginColor];
+    
+    
     //login logo
     UILabel *loginLogo = [[UILabel alloc] initWithFrame:CGRectMake(halfWidth - 42, halfLength - 133, 84, 74)];
-    loginLogo.textColor = [self colorWithHexString:@"ffffff"];
+    loginLogo.textColor = [USColor usColor];
     loginLogo.font = [UIFont fontWithName:@"Helvetica-Bold" size:60];
     loginLogo.textAlignment = NSTextAlignmentCenter;
     loginLogo.backgroundColor = [UIColor clearColor];
@@ -68,12 +79,13 @@
     usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength - 10, 190, 30)];
     usernameTextField.textColor = [UIColor whiteColor];
     usernameTextField.backgroundColor = [UIColor clearColor];
-    UIColor *placeholderColor = [self colorWithHexString:@"1E1E1E"];
+    UIColor *placeholderColor = [USColor placeholderColor];
     usernameTextField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: placeholderColor}];
     usernameTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
     usernameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     usernameTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    usernameTextField.text=@"l";
     
     //PW Textfield
     PWTextField = [[UITextField alloc] initWithFrame:CGRectMake(halfWidth -75, halfLength + 60, 190, 30)];
@@ -84,6 +96,7 @@
     PWTextField.font = [UIFont fontWithName:@"Helvetica" size:20];
     PWTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     PWTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    PWTextField.text=@"l";
     
     //Sign In Button
     UIButton *signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -140,7 +153,7 @@
     //NSLog(@"signin");
     [PFUser logInWithUsernameInBackground:usernameTextField.text password:PWTextField.text block:^(PFUser *user, NSError *error){
         if (user) {
-            //segue method
+            [self performSegueWithIdentifier:@"loginToHomePage" sender:nil];
         }
         else{
             UIAlertView *signupPopup = [[UIAlertView alloc] initWithTitle:@"Opps..." message:[error userInfo][@"error"] delegate:self cancelButtonTitle:@"FINE" otherButtonTitles:nil];
@@ -184,42 +197,21 @@
     [self.view endEditing:YES];
 }
 
-    //hex color
--(UIColor*)colorWithHexString:(NSString*)hex
-{
-    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-    
-    // String should be 6 or 8 characters
-    if ([cString length] < 6) return [UIColor grayColor];
-    
-    // strip 0X if it appears
-    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
-    
-    if ([cString length] != 6) return  [UIColor grayColor];
-    
-    // Separate into r, g, b substrings
-    NSRange range;
-    range.location = 0;
-    range.length = 2;
-    NSString *rString = [cString substringWithRange:range];
-    
-    range.location = 2;
-    NSString *gString = [cString substringWithRange:range];
-    
-    range.location = 4;
-    NSString *bString = [cString substringWithRange:range];
-    
-    // Scan values
-    unsigned int r, g, b;
-    [[NSScanner scannerWithString:rString] scanHexInt:&r];
-    [[NSScanner scannerWithString:gString] scanHexInt:&g];
-    [[NSScanner scannerWithString:bString] scanHexInt:&b];
-    
-    return [UIColor colorWithRed:((float) r / 255.0f)
-                           green:((float) g / 255.0f)
-                            blue:((float) b / 255.0f)
-                           alpha:1.0f];
+
+    //Tab Setup
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"loginToHomePage"]) {
+        MainTabBarController *dest = (MainTabBarController *) [segue destinationViewController];
+        StoryTabBarViewController *story = (StoryTabBarViewController *) [dest.viewControllers objectAtIndex:0];
+        story.tabBarItem.image = [UIImage imageNamed:@"storyTabImg@2x.png"];
+        TimerTabBarViewController *timer = (TimerTabBarViewController *) [dest.viewControllers objectAtIndex:1];
+        timer.tabBarItem.image = [UIImage imageNamed:@"timerTabImg@2x.png"];
+        AccountTabBarViewController *account = (AccountTabBarViewController *) [dest.viewControllers objectAtIndex:2];
+        account.tabBarItem.image = [UIImage imageNamed:@"accountTabImg@2x.png"];
+        dest.tabBar.tintColor = [USColor usColor];
+    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
