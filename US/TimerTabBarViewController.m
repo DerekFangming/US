@@ -48,19 +48,21 @@
 
     //timer submit button method
 - (void)timerSubmit:(UIButton*)sender{
-//    PFUser *currentUser = [PFUser currentUser];
-//    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-//    [query whereKey:@"objectId" equalTo:currentUser.objectId];
-//    [query getFirstObjectInBackgroundWithBlock:^(PFObject *userInfo, NSError *error){
-//        if (!error) {
-//            [userInfo setObject:[_timerDatePicker date] forKey:@"timerDate"];
-//            [userInfo saveInBackground];
-//        }
-//        else{
-//            NSLog(@"Error: %@", error);
-//        }
-//    }];
-    NSLog(@"%@", [_timerDatePicker date]);
+    PFUser *currentUser = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query whereKey:@"objectId" equalTo:currentUser.objectId];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *userInfo, NSError *error){
+        if (!error) {
+            [userInfo setObject:[_timerDatePicker date] forKey:@"timerDate"];
+            [userInfo saveInBackground];
+        }
+        else{
+            NSLog(@"Error: %@", error);
+        }
+    }];
+    
+    NSDate *a = [NSDate date];
+
 }
 
 - (void)didReceiveMemoryWarning {
