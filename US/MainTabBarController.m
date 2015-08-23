@@ -8,6 +8,8 @@
 
 #import "MainTabBarController.h"
 
+#import "TimerTabBarViewController.h"
+
 #import "USColor.h"
 
 @interface MainTabBarController ()
@@ -20,6 +22,9 @@
     [super viewDidLoad];
     
     
+    if (self.tabBarController.selectedIndex == 1) {
+        NSLog(@"33");
+    }
     
     //[[UITabBar appearance] tintColor:[USColor usColor]];
     
@@ -28,7 +33,21 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
+    
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    if ([item.title isEqualToString:@"Timer"]) {
+        NSLog(@"tab selected: %@", item.title);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"calCircularStep" object:nil];
+    }else{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"removeProgress" object:nil];
+
+    }
+   
 }
 
 /*

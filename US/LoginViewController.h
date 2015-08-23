@@ -10,7 +10,8 @@
     int keyboardListener;
     UITextField *usernameTextField;
     UITextField *PWTextField;
-    
+    NSDate *tempDate;
+
 }
 
 

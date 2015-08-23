@@ -10,9 +10,10 @@
 
 @interface USColor : NSObject
 
-+ (USColor *)usColor;
-+ (USColor *)loginColor;
++ (UIColor *)usColor;
++ (UIColor *)loginColor;
 + (UIColor *) placeholderColor;
++ (UIColor *) redcolor;
 
 
 

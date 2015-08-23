@@ -29,6 +29,7 @@
 		81AFA6791B0EDD12000763C0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332375315E438E900AE2736 /* libsqlite3.dylib */; };
 		81DDFD1919B4A60300BE649C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DDFD1719B4A60300BE649C /* Parse.framework */; };
 		81DDFD1A19B4A60300BE649C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81DDFD1819B4A60300BE649C /* ParseFacebookUtils.framework */; };
+		91490A681B86BE94005ECBA2 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91490A671B86BE94005ECBA2 /* DACircularProgressView.m */; };
 		91F1919F1B737A850037DA8A /* loginBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F1919E1B737A850037DA8A /* loginBg.png */; };
 		91F191AA1B7653D80037DA8A /* loginPWIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191A91B7653D80037DA8A /* loginPWIcon.png */; };
 		91F191AC1B7654210037DA8A /* loginUsernameIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F191AB1B7654210037DA8A /* loginUsernameIcon.png */; };
@@ -91,6 +92,8 @@
 		81A6CA601A2EA82800297C39 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81DDFD1719B4A60300BE649C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		81DDFD1819B4A60300BE649C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		91490A661B86BE94005ECBA2 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		91490A671B86BE94005ECBA2 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		91F1919E1B737A850037DA8A /* loginBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBg.png; path = US/loginBg.png; sourceTree = "<group>"; };
 		91F191A91B7653D80037DA8A /* loginPWIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginPWIcon.png; path = US/loginPWIcon.png; sourceTree = "<group>"; };
 		91F191AB1B7654210037DA8A /* loginUsernameIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginUsernameIcon.png; path = US/loginUsernameIcon.png; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				91F191DA1B7E71F90037DA8A /* StoryTabBarViewController.m */,
 				91F191DC1B7E720F0037DA8A /* AccountTabBarViewController.h */,
 				91F191DD1B7E720F0037DA8A /* AccountTabBarViewController.m */,
+				91490A661B86BE94005ECBA2 /* DACircularProgressView.h */,
+				91490A671B86BE94005ECBA2 /* DACircularProgressView.m */,
 			);
 			path = US;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91F191CA1B7AF4570037DA8A /* SignupViewController.m in Sources */,
+				91490A681B86BE94005ECBA2 /* DACircularProgressView.m in Sources */,
 				91F191D21B7E70040037DA8A /* MainTabBarController.m in Sources */,
 				91F191E81B810E710037DA8A /* USColor.m in Sources */,
 				91F191D81B7E71E60037DA8A /* TimerTabBarViewController.m in Sources */,

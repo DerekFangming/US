@@ -22,6 +22,9 @@
     return [self colorWithHexString:@"1E1E1E"];
 }
 
++ (UIColor *) redcolor {
+    return [self colorWithHexString:@"E6A0A0"];
+}
 
 //hex color
 + (UIColor*)colorWithHexString:(NSString*)hex

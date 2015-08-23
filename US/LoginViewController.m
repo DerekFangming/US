@@ -200,15 +200,40 @@
 
     //Tab Setup
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    
+    
     if ([[segue identifier] isEqualToString:@"loginToHomePage"]) {
-        MainTabBarController *dest = (MainTabBarController *) [segue destinationViewController];
-        StoryTabBarViewController *story = (StoryTabBarViewController *) [dest.viewControllers objectAtIndex:0];
-        story.tabBarItem.image = [UIImage imageNamed:@"storyTabImg@2x.png"];
-        TimerTabBarViewController *timer = (TimerTabBarViewController *) [dest.viewControllers objectAtIndex:1];
-        timer.tabBarItem.image = [UIImage imageNamed:@"timerTabImg@2x.png"];
-        AccountTabBarViewController *account = (AccountTabBarViewController *) [dest.viewControllers objectAtIndex:2];
-        account.tabBarItem.image = [UIImage imageNamed:@"accountTabImg@2x.png"];
-        dest.tabBar.tintColor = [USColor usColor];
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        [query whereKey:@"objectId" equalTo:[PFUser currentUser].objectId];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+//                NSDateFormatter* formatter = [[NSDateFormatter alloc] init] ;
+//                [formatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+
+                tempDate = objects[0][@"timerDate"];
+                
+                MainTabBarController *dest = (MainTabBarController *) [segue destinationViewController];
+                StoryTabBarViewController *story = (StoryTabBarViewController *) [dest.viewControllers objectAtIndex:0];
+                story.tabBarItem.image = [UIImage imageNamed:@"storyTabImg@2x.png"];
+                TimerTabBarViewController *timer = (TimerTabBarViewController *) [dest.viewControllers objectAtIndex:1];
+                
+                if (tempDate != nil) {
+                    timer.startedDate = tempDate;
+                }
+                
+                timer.tabBarItem.image = [UIImage imageNamed:@"timerTabImg@2x.png"];
+                AccountTabBarViewController *account = (AccountTabBarViewController *) [dest.viewControllers objectAtIndex:2];
+                account.tabBarItem.image = [UIImage imageNamed:@"accountTabImg@2x.png"];
+                dest.tabBar.tintColor = [USColor usColor];
+                
+//                NSLog(@"%@",[formatter stringFromDate:  tempDate]) ;
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
     }
 }
 
